@@ -146,7 +146,7 @@ module fx68k(
 	input BRn, BGACKn,
 	input IPL0n, input IPL1n, input IPL2n,
 	input [15:0] iEdb, output [15:0] oEdb,
-	output [23:1] eab
+	output [31:1] eab
 	);
 	
 	// wire clock = Clks.clk;
@@ -1146,7 +1146,7 @@ module excUnit( input s_clks Clks,
 	output [15:0] AblOut,
 	output logic [15:0] Irc,
 	output logic [15:0] oEdb,
-	output logic [23:1] eab);
+	output logic [31:1] eab);
 
 localparam REG_USP = 15;
 localparam REG_SSP = 16;
@@ -1452,7 +1452,7 @@ localparam REG_DT = 17;
 		end
 	end
 
-	assign eab = aob[23:1];
+	assign eab = aob[31:1];
 	assign aob0 = aob[0];
 				
 	// AU
@@ -2648,7 +2648,7 @@ module fx68kTop( input clk32,
 	output FC0, output FC1, output FC2,
 	output BGn,
 	output oRESETn, output oHALTEDn,
-	output [23:1] eab
+	output [31:1] eab
 	);
 
 	// Clock must be at least twice the desired frequency. A 32 MHz clock means a maximum 16 MHz effective frequency.
